@@ -25,7 +25,7 @@ La aplicación cuenta con un sistema de autenticación de usuarios, una base de 
 1.  **Clonar el repositorio:**
     Abre tu terminal y ejecuta el siguiente comando para descargar el proyecto:
     ```bash
-    git clone [https://github.com/benjaamonti/EmiSat.git](https://github.com/benjaamonti/EmiSat.git)
+    git clone https://github.com/benjaamonti/EmiSat.git
     cd EmiSat
     ```
 
