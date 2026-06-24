@@ -62,6 +62,8 @@ Para iniciar la aplicación, ejecuta el siguiente comando en la terminal:
 ```bash
 streamlit run app.py
 
+---
+
 ## 🔐 Credenciales de Acceso
 
 Al iniciar la aplicación por primera vez, la base de datos se inicializa automáticamente con usuarios de prueba. Puedes utilizar las siguientes credenciales según el rol que necesites probar:
