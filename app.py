@@ -239,9 +239,6 @@ else:
             </div>
         """, unsafe_allow_html=True)
 
-    st.divider()
-
-
     st.markdown(
             """
             <style>
@@ -253,7 +250,6 @@ else:
 
     st.divider()
 
-    # (Acá sigue tu código normal con el style del stMetricValue)
     st.markdown(
         """
         <style>
