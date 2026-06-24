@@ -39,7 +39,7 @@ if not st.session_state['logeado']:
     with col2:
         logo_col1, logo_col2, logo_col3 = st.columns([1, 1.5, 1])
         with logo_col2:
-            st.image("Emisat_logo.png", use_container_width=True)
+            st.image("Emisat_logo.png", width='stretch')
 
         st.markdown("<h1 style='text-align: center;'> Iniciar Sesión</h1>", unsafe_allow_html=True)
 
@@ -47,7 +47,7 @@ if not st.session_state['logeado']:
         clave = st.text_input("Contraseña", type="password")
 
         st.write("")
-        if st.button("Entrar", use_container_width=True):
+        if st.button("Entrar", width='stretch'):
             rol_detectado = validar_usuario(usuario, clave)
             if rol_detectado:
                 st.session_state['logeado'] = True
@@ -115,7 +115,7 @@ else:
     # ─────────────────────────────────────────
     side_col1, side_col2, side_col3 = st.sidebar.columns([1, 2, 1])
     with side_col2:
-        st.image("Emisat_logo.png", use_container_width=True)
+        st.image("Emisat_logo.png", width='stretch')
 
     st.sidebar.markdown("<br>", unsafe_allow_html=True)
 
@@ -126,7 +126,7 @@ else:
     </style>
     """, unsafe_allow_html=True)
 
-    if st.sidebar.button("🚪 Cerrar Sesión", use_container_width=True):
+    if st.sidebar.button("🚪 Cerrar Sesión", width='stretch'):
         st.session_state['logeado'] = False
         st.session_state['rol'] = None
         st.rerun()
@@ -453,7 +453,7 @@ else:
                         st.markdown(
                             f'<div class="dash-card" style="padding-bottom:6px;"><div class="kpi-label" style="text-align:center;">Índice de consistencia</div>',
                             unsafe_allow_html=True)
-                        st.plotly_chart(fig_gauge, use_container_width=True, config={'displayModeBar': False})
+                        st.plotly_chart(fig_gauge, width='stretch', config={'displayModeBar': False})
                         st.markdown(
                             f'<div style="text-align:center;margin-top:-10px;"><span class="pill {pill_class}">{estado_indice}</span></div></div>',
                             unsafe_allow_html=True)
@@ -472,7 +472,7 @@ else:
                         st.markdown(
                             f'<div class="dash-card"><div class="kpi-label">Declarado vs. detectado por satélite</div>',
                             unsafe_allow_html=True)
-                        st.plotly_chart(fig_bar, use_container_width=True, config={'displayModeBar': False})
+                        st.plotly_chart(fig_bar, width='stretch', config={'displayModeBar': False})
                         st.markdown(
                             f'<div class="kpi-sub" style="text-align:center;">Diferencia: <b style="color:{COLOR_DANGER};">{diferencia_tco2e:,.0f} tCO₂e</b></div></div>',
                             unsafe_allow_html=True)
@@ -509,7 +509,7 @@ else:
                     años_proyeccion = ["2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034"]
                     arreglo_fases = [0.025, 0.05, 0.10, 0.225, 0.485, 0.61, 0.735, 0.86, 1.0]
 
-                    if st.button("Proyectar Exposición Futura", type="primary", use_container_width=True):
+                    if st.button("Proyectar Exposición Futura", type="primary", width='stretch'):
                         y_vals_exposicion = [
                             multa_potencial + ((co2e_anual * f * PRECIO_ETS) - (emision_declarada * f * PRECIO_ETS)) for
                             f in arreglo_fases]
@@ -522,7 +522,7 @@ else:
                                                paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
                                                yaxis=dict(showgrid=True, gridcolor="#EEF2EF"),
                                                font={'color': COLOR_TEXT, 'family': "Arial"})
-                        st.plotly_chart(fig_proy, use_container_width=True)
+                        st.plotly_chart(fig_proy, width='stretch')
 
                     if st.session_state.get('rol') == "admin" and tiene_dibujo and not tiene_preset:
                         st.divider()
@@ -667,7 +667,7 @@ else:
                         go.Bar(x=nombres_chart, y=emisiones_sat_chart, name='Detectado', marker_color=COLOR_PRIMARY))
                     fig_emisiones.update_layout(title='Comparativa de Emisiones', barmode='group',
                                                 paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)")
-                    st.plotly_chart(fig_emisiones, use_container_width=True, config={'displayModeBar': False})
+                    st.plotly_chart(fig_emisiones, width='stretch', config={'displayModeBar': False})
 
                 with graf_col2:
                     # 1. Filtramos los negativos (los pasamos a 0)
@@ -702,7 +702,7 @@ else:
 
                         # Agregamos padding al contenedor para darle más aire
                         st.markdown('<div class="dash-card" style="padding: 10px;">', unsafe_allow_html=True)
-                        st.plotly_chart(fig_pie, use_container_width=True, config={'displayModeBar': False})
+                        st.plotly_chart(fig_pie, width='stretch', config={'displayModeBar': False})
                         st.markdown('</div>', unsafe_allow_html=True)
                     else:
                         st.markdown(
