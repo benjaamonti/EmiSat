@@ -29,19 +29,12 @@ La aplicación cuenta con un sistema de autenticación de usuarios, una base de 
     cd EmiSat
     ```
 
-2.  **Crear un entorno virtual (Recomendado):**
+2.  **Crear un entorno virtual:**
     ```bash
     python -m venv venv
-    
-    # En Windows:
-    venv\Scripts\activate
-    
-    # En macOS/Linux:
-    source venv/bin/activate
     ```
 
 3.  **Instalar las dependencias:**
-    Ejecuta el siguiente comando para instalar las librerías necesarias:
     ```bash
     pip install -r requirements.txt
     ```
@@ -51,7 +44,6 @@ La aplicación cuenta con un sistema de autenticación de usuarios, una base de 
     ```bash
     earthengine authenticate
     ```
-    *(Nota: Si encuentras problemas de autenticación, puedes descomentar la línea `# ee.Authenticate()` en el archivo `app.py` durante la primera ejecución).*
 
 ---
 
