@@ -61,6 +61,7 @@ Para iniciar la aplicación, ejecuta el siguiente comando en la terminal:
 
 ```bash
 streamlit run app.py
+```
 
 ---
 
