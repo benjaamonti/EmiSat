@@ -17,7 +17,7 @@ inicializar_backend()
 
 if 'ee_initialized' not in st.session_state:
     try:
-        # ee.Authenticate() # Descomentar solo si necesitas forzar login local de nuevo
+        ee.Authenticate()
         ee.Initialize(project='emisat')
         st.session_state['ee_initialized'] = True
     except Exception as e:
